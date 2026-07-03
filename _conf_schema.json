@@ -1,0 +1,66 @@
+{
+  "storage_path": {
+    "description": "数据存储根目录路径",
+    "type": "string",
+    "hint": "建议保持默认值，位于 AstrBot 数据目录下。修改后需确保目录存在且有读写权限。",
+    "default": "plugin_data/astrbot_plugin_novel_writer/",
+    "obvious_hint": false
+  },
+  "auto_backup": {
+    "description": "是否开启章节编辑时的自动备份功能",
+    "type": "bool",
+    "hint": "开启后，每次编辑章节内容前，会将当前内容自动备份到历史文件夹中。",
+    "default": true
+  },
+  "backup_format": {
+    "description": "备份文件的命名格式策略",
+    "type": "string",
+    "hint": "目前仅支持 timestamp 模式，文件名将包含 YYYYMMDD_HHMMSS 时间戳。",
+    "default": "timestamp",
+    "options": [
+      "timestamp"
+    ]
+  },
+  "max_backups": {
+    "description": "每个章节保留的最大历史版本数量",
+    "type": "int",
+    "hint": "当备份数量超过此阈值时，最旧的备份将被自动删除以节省存储空间。",
+    "default": 10
+  },
+  "default_project": {
+    "description": "默认的小说项目名称",
+    "type": "string",
+    "hint": "当用户未指定项目时，将使用此项目进行创作和管理。",
+    "default": "default"
+  },
+  "export_markdown_style": {
+    "description": "导出 Markdown 文档时的标题层级样式",
+    "type": "string",
+    "hint": "控制导出文件中各级别内容的标题格式。",
+    "default": "hash",
+    "options": [
+      "hash",
+      "atx",
+      "setext"
+    ]
+  },
+  "enable_auto_tagging": {
+    "description": "是否启用自动标签建议功能",
+    "type": "bool",
+    "hint": "开启后，在添加灵感或设定时，插件会尝试根据内容自动生成推荐标签（需配合 LLM 能力）。",
+    "default": false
+  },
+  "log_level": {
+    "description": "插件运行日志级别",
+    "type": "string",
+    "hint": "用于调试，建议生产环境保持 WARNING 或 ERROR。",
+    "default": "WARNING",
+    "options": [
+      "DEBUG",
+      "INFO",
+      "WARNING",
+      "ERROR",
+      "CRITICAL"
+    ]
+  }
+}
